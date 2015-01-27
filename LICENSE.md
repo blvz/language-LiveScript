@@ -1,4 +1,4 @@
-Copyright (c) 2014 GitHub Inc.
+Copyright (c) 2015 Rafael Belvederese
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -22,10 +22,12 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 --------------------------------------------------------------------
 
 This package was derived from a TextMate bundle located at
-https://github.com/jashkenas/coffee-script-tmbundle and distributed under the
-following license, located in `LICENSE`:
+https://github.com/paulmillr/LiveScript.tmbundle and distributed under the
+following license, located in `README.md`:
 
-Copyright (c) 2009-2014 Jeremy Ashkenas
+Copyright (c) 2012 Paul Miller (http://paulmillr.com/)
+
+Copyright (c) 2012 Jeremy Ashkenas
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

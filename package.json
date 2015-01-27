@@ -1,18 +1,18 @@
 {
-  "version": "0.39.0",
-  "name": "language-coffee-script",
-  "description": "CoffeeScript language support in Atom",
+  "version": "0.0.0",
+  "name": "language-LiveScript-edge",
+  "description": "Up to date LiveScript language support in Atom",
   "license": "MIT",
   "engines": {
     "atom": "*",
     "node": "*"
   },
-  "homepage": "http://atom.github.io/language-coffee-script",
+  "homepage": "http://github.com/blvz/language-LiveScript",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/language-coffee-script.git"
+    "url": "https://github.com/blvz/language-LiveScript.git"
   },
   "bugs": {
-    "url": "https://github.com/atom/language-coffee-script/issues"
+    "url": "https://github.com/blvz/language-LiveScript/issues"
   }
 }

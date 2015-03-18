@@ -99,4 +99,4 @@
 ".string.quoted.double.livescript:not(.string .source), .string.quoted.double.heredoc.livescript:not(.string .source)":
   "Interpolated Code":
     prefix: "#"
-    body: '#{${1:$TM_SELECTED_TEXT}}'
+    body: '#{$1}$2'

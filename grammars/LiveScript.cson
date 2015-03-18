@@ -12,10 +12,10 @@ patterns: [
   {
     match: '''
       (?x)
-      				!?[~-]{1,2}>\*?
+      				!?[~-]{1,2}>\\*?
       				|<[~-]{1,2}!?
-      				|\(\s* (?=    instanceof[\s)]|and[\s)]|or[\s)]|is[\s)]|isnt[\s)]|in[\s)]|import[\s)]|import\ all[\s)]     |\.|[-+/*%^&<>=|][\b\s)\w$]|\*\*|\%\%)
-      				|      (?<=[\s(]instanceof|[\s(]and|[\s(]or|[\s(]is|[\s(]isnt|[\s(]in|[\s(]import|[\s(]import\ all|[\s(]do|\.|\*\*|\%\%|[\b\s(\w$][-+/*%^&<>=|]) \s*\)
+      				|\\(\\s* (?=    instanceof[\\s)]|and[\\s)]|or[\\s)]|is[\\s)]|isnt[\\s)]|in[\\s)]|import[\\s)]|import\\ all[\\s)]     |\\.|[-+/*%^&<>=|][\\b\\s)\\w$]|\\*\\*|\\%\\%)
+      				|      (?<=[\\s(]instanceof|[\\s(]and|[\\s(]or|[\\s(]is|[\\s(]isnt|[\\s(]in|[\\s(]import|[\\s(]import\\ all|[\\s(]do|\\.|\\*\\*|\\%\\%|[\\b\\s(\\w$][-+/*%^&<>=|]) \\s*\\)
 
     '''
     name: "storage.type.function.livescript"
@@ -152,9 +152,9 @@ patterns: [
   {
     match: '''
       (?x)
-      				\b(?<![\.\$\-@])(
+      				\\b(?<![\\.\\$\\-@])(
       					instanceof|new|delete|typeof|and|or|is|isnt|not
-      				)(?!\-|\s*:)\b
+      				)(?!\\-|\\s*:)\\b
 
     '''
     name: "keyword.operator.livescript"
@@ -170,12 +170,12 @@ patterns: [
   {
     match: '''
       (?x)
-      				\b(?<![\.\$\-@])(?:
+      				\\b(?<![\\.\\$\\-@])(?:
       				return|break|continue|throw
-      				|try|if|while|for|for\s+own|switch|unless|until
+      				|try|if|while|for|for\\s+own|switch|unless|until
       				|catch|finally|else|nobreak|case|default|fallthrough|when|otherwise|then
       				|yield
-      				)(?!\-|\s*:)\b
+      				)(?!\\-|\\s*:)\\b
 
     '''
     name: "keyword.control.livescript"
@@ -183,10 +183,10 @@ patterns: [
   {
     match: '''
       (?x)
-      				and=|or=|%|&|\^|\*|\/|(?<![a-zA-Z$_])(\-)?\-(?!\-?>)|\+\+|\+|
+      				and=|or=|%|&|\\^|\\*|\\/|(?<![a-zA-Z$_])(\\-)?\\-(?!\\-?>)|\\+\\+|\\+|
       				~(?!~?>)|==|=|!=|<=|>=|<<=|>>=|
-      				>>>=|<>|<(?!\[)|(?<!\])>|(?<!\w)!(?!([~\-]+)?>)|&&|\.\.(\.)?|\s\.\s|\?|\|\||\:|\*=|(?<!\()/=|%=|\+=|\-=|\.=|&=
-      				|\^=
+      				>>>=|<>|<(?!\\[)|(?<!\\])>|(?<!\\w)!(?!([~\\-]+)?>)|&&|\\.\\.(\\.)?|\\s\\.\\s|\\?|\\|\\||\\:|\\*=|(?<!\\()/=|%=|\\+=|\\-=|\\.=|&=
+      				|\\^=
 
     '''
     name: "keyword.operator.livescript"
@@ -194,9 +194,9 @@ patterns: [
   {
     match: '''
       (?x)
-      				\b(?<![\.\$\-@])(?:
+      				\\b(?<![\\.\\$\\-@])(?:
       				function
-      				)(?!\-|\s*:)\b
+      				)(?!\\-|\\s*:)\\b
 
     '''
     name: "storage.type.function.livescript"
@@ -204,12 +204,12 @@ patterns: [
   {
     match: '''
       (?x)
-      				\b(?<![\.\$\-@])(?:
+      				\\b(?<![\\.\\$\\-@])(?:
       				this|throw|then|try|typeof!?|til|to
       				|continue|const|case|catch|class
-      				|in|instanceof|import|import\s+all|implements|if|is
+      				|in|instanceof|import|import\\s+all|implements|if|is
       				|default|delete|debugger|do
-      				|for|for\s+own|finally|function|from|fallthrough
+      				|for|for\\s+own|finally|function|from|fallthrough
       				|super|switch
       				|else|nobreak|extends|export|eval
       				|and|arguments
@@ -220,7 +220,7 @@ patterns: [
       				|let|var|loop
       				|match
       				|by|yield
-      				)(?!\-|\s*:)\b
+      				)(?!\\-|\\s*:)\\b
 
     '''
     name: "keyword.other.livescript"
@@ -275,10 +275,10 @@ patterns: [
         name: "storage.type.function.livescript"
     match: '''
       (?x)
-      				(\s*)
-      				(?=[a-zA-Z\$_])
-      				([a-zA-Z\$_]([\w$.:-])*)\s*
-      				(?=[:=](\s*!?\s*\(.*\))?\s*(!?[~-]{1,2}>\*?))
+      				(\\s*)
+      				(?=[a-zA-Z\\$_])
+      				([a-zA-Z\\$_]([\\w$.:-])*)\\s*
+      				(?=[:=](\\s*!?\\s*\\(.*\\))?\\s*(!?[~-]{1,2}>\\*?))
 
     '''
     name: "meta.function.livescript"
@@ -318,12 +318,12 @@ patterns: [
   }
   {
     match: '''
-      (?x)\b(
+      (?x)\\b(
       				Array|ArrayBuffer|Blob|Boolean|Date|document|event|Function|
       				Int(8|16|32|64)Array|Math|Map|Number|
       				Object|Proxy|RegExp|Set|String|WeakMap|
       				window|Uint(8|16|32|64)Array|XMLHttpRequest
-      			)\b
+      			)\\b
     '''
     name: "support.class.livescript"
   }
@@ -424,9 +424,9 @@ patterns: [
   }
   {
     match: '''
-      (?x)\b(
+      (?x)\\b(
       				decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|require
-      			)\b
+      			)\\b
     '''
     name: "support.function.livescript"
   }
@@ -442,7 +442,7 @@ patterns: [
 
     '''
     match: '''
-      (?x)(?<![.-])\b(
+      (?x)(?<![.-])\\b(
       				map|filter|reject|partition|find|each|head|tail|last|initial|empty|
       				values|keys|length|cons|append|join|reverse|fold(l|r)?1?|unfoldr|
       				and(List|-list)|or(List|-list)|any|all|unique|sum|product|mean|compact|
@@ -456,7 +456,7 @@ patterns: [
       				lines|unlines|words|unwords|max|min|negate|abs|signum|quot|rem|div|mod|
       				recip|pi|tau|exp|sqrt|ln|pow|sin|cos|tan|asin|acos|atan|atan2|truncate|
       				round|ceiling|floor|is(It|-it)NaN|even|odd|gcd|lcm|disabled__id
-      			)\b(?![.-])
+      			)\\b(?![.-])
     '''
     name: "support.function.prelude.livescript"
   }
@@ -466,52 +466,52 @@ patterns: [
   }
   {
     match: '''
-      (?x)((?<=(\.|\]|\)))(
+      (?x)((?<=(\\.|\\]|\\)))(
       				apply|call|concat|every|filter|for(Each|-each)|
       				from|has(Own|-own)(Property|-property)|index(Of|-of)|
       				is(Prototype|-prototype)(Of|-of)|join|last(Index|-index)(Of|-of)|
       				map|of|pop|property(Is|-is)(Enumerable|-enumerable)|push|
       				reduce(Right|-right)?|reverse|shift|slice|some|sort|
       				splice|to(Locale|-locale)?(String|-string)|unshift|valueOf
-      			))\b(?!-)
+      			))\\b(?!-)
     '''
     name: "support.function.method.array.livescript"
   }
   {
     match: '''
-      (?x)((?<=Array\.)(
+      (?x)((?<=Array\\.)(
       				isArray
-      			))\b
+      			))\\b
     '''
     name: "support.function.static.array.livescript"
   }
   {
     match: '''
-      (?x)((?<=Object\.)(
+      (?x)((?<=Object\\.)(
       				create|define(Propert|-propert)(ies|y)|freeze|
       				get(Own|-own)(Property|-property)(Descriptors?|Names)|
       				get(Property|-property)(Descriptor|Names)|getPrototypeOf|
       				is((Extensible|-extensible)|(Frozen|-frozen)|(Sealed|-sealed))?|
       				keys|prevent(Extensions|-extensions)|seal
-      			))\b
+      			))\\b
     '''
     name: "support.function.static.object.livescript"
   }
   {
     match: '''
-      (?x)((?<=Math\.)(
+      (?x)((?<=Math\\.)(
       				abs|acos|acosh|asin|asinh|atan|atan2|atanh|ceil|cos|cosh|exp|expm1|floor|
       				hypot|log|log10|log1p|log2|max|min|pow|random|round|sign|sin|sinh|sqrt|
       				tan|tanh|trunc
-      			))\b
+      			))\\b
     '''
     name: "support.function.static.math.livescript"
   }
   {
     match: '''
-      (?x)((?<=Number\.)(
+      (?x)((?<=Number\\.)(
       				is(Finite|Integer|NaN)|to(Integer|-integer)
-      			))\b
+      			))\\b
     '''
     name: "support.function.static.number.livescript"
   }
@@ -595,11 +595,11 @@ repository:
   interpolated_livescript:
     patterns: [
       {
-        begin: "\\#\\{"
+        begin: '\\#\\{'
         captures:
           "0":
             name: "punctuation.section.embedded.livescript"
-        end: "\\}"
+        end: '\\}'
         name: "source.livescript.embedded.source"
         patterns: [
           {

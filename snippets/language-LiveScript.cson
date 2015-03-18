@@ -1,102 +1,150 @@
-".source.livescript":
-  "Array Comprehension":
-    prefix: "fora"
-    body: "[${0:# body...} for ${1:name} in ${2:array}]"
-  "Function (bound)":
-    prefix: "bfun"
-    body: '''
-      (${1:args}) ~>
-        ${0:# body...}
-    '''
+'.source.livescript':
+  'Array Comprehension':
+    prefix: 'fora'
+    body: '[ ${0:# body...} for ${1:name} in ${2:array} ]'
+
   Class:
-    prefix: "cla"
+    prefix: 'cla'
     body: '''
       class ${1:Class-name}${2: extends ${3:Ancestor}}
         ${4:(${5:args}) ->
           ${6:return}}
       $7
     '''
-  "Else if":
-    prefix: "elif"
-    body: '''
-      else if ${1:condition}
-        ${0:# body...}
-    '''
+
   Function:
-    prefix: "fun"
+    prefix: 'fun'
     body: '''
       (${1:args}) ->
         ${0:# body...}
-
-
     '''
-  "If .. Else":
-    prefix: "ife"
+
+  'Function (bound)':
+    prefix: 'bfun'
+    body: '''
+      (${1:args}) ~>
+        ${0:# body...}
+    '''
+
+  'Function (named)':
+    prefix: 'nfun'
+    body: '''
+      function ${1:args}
+        ${0:# body...}
+    '''
+
+  'Backcall':
+    prefix: 'bca'
+    body: '''
+      ${1:args} <- ${2:async-call}
+      ${0:# body...}
+    '''
+
+  'Backcall (bound)':
+    prefix: 'bbca'
+    body: '''
+      ${1:args} <~ ${2:async-call}
+      ${0:# body...}
+    '''
+
+  'Let block':
+    prefix: 'l',
+    body: 'let $1 = $2\n  $3'
+
+  If:
+    prefix: 'if'
+    body: '''
+      if ${1:condition}
+        ${0:# body...}
+    '''
+
+  'If .. Else':
+    prefix: 'ife'
     body: '''
       if ${1:condition}
         ${2:# body...}
       else
         ${3:# body...}
     '''
-  If:
-    prefix: "if"
+
+  'Else if':
+    prefix: 'elif'
     body: '''
-      if ${1:condition}
+      else if ${1:condition}
         ${0:# body...}
     '''
-  "Object comprehension":
+
+  'Ternary If':
+    prefix: 'ifte'
+    body: 'if ${1:condition} then ${2:value} else ${3:other}'
+
+  Unless:
+    prefix: 'unl'
+    body: '${1:action} unless ${2:condition}'
+
+  'Object comprehension':
     prefix: "foro"
     body: '''
       for ${1:key}, ${2:value} of ${3:Object}
         ${0:# body...}
     '''
-  "Range comprehension (exclusive)":
+
+  'Range comprehension (exclusive)':
     prefix: "forrex"
     body: '''
       for ${1:name} in [${2:start} til ${3:finish}]${4: by ${5:step}}
         ${0:# body...}
     '''
-  "Range comprehension (inclusive)":
+
+  'Range comprehension (inclusive)':
     prefix: "forr"
     body: '''
       for ${1:name} in [${2:start} to ${3:finish}]${4: by ${5:step}}
         ${0:# body...}
     '''
+
   Switch:
-    prefix: "swi"
+    prefix: 'swi'
     body: '''
       switch ${1:object}
         when ${2:value}
           ${0:# body...}
     '''
-  "Ternary If":
-    prefix: "ifte"
-    body: "if ${1:condition} then ${2:value} else ${3:other}"
-  "Try .. Catch":
-    prefix: "try"
+
+  'Try .. Catch':
+    prefix: 'try'
     body: '''
       try
         $1
       catch ${2:error}
         $3
     '''
-  Unless:
-    prefix: "unl"
-    body: "${1:action} unless ${2:condition}"
+
   Subheader:
-    prefix: "/3"
+    prefix: '/3'
     body: '''
       # $1
       # -------------------------
       $0
     '''
+
   log:
-    prefix: "log"
-    body: "console.log $0"
+    prefix: 'log'
+    body: 'console.log $0'
+
+  warn:
+    prefix: 'warn'
+    body: 'console.warn $0'
+
+  error:
+    prefix: 'error'
+    body: 'console.error $0'
+
   require:
-    prefix: "req"
-    body: "${2/^.*?([\\w_]+).*$/\\L$1/} = require ${2:'${1:sys}'}$3"
-".string.quoted.double.livescript:not(.string .source), .string.quoted.double.heredoc.livescript:not(.string .source)":
-  "Interpolated Code":
-    prefix: "#"
+    prefix: 'req'
+    body: 'require! <[ $0 ]>'
+
+'.string.quoted.double.livescript:not(.string .source), .string.quoted.double.heredoc.livescript:not(.string .source)':
+  'Interpolated Code':
+    prefix: '#'
     body: '#{$1}$2'

@@ -445,9 +445,9 @@ patterns: [
       (?x)(?<![.-])\\b(
       				map|filter|reject|partition|find|each|head|tail|last|initial|empty|
       				values|keys|length|cons|append|join|reverse|fold(l|r)?1?|unfoldr|
-      				and(List|-list)|or(List|-list)|any|all|unique|sum|product|mean|compact|
-      				concat(Map|-map)?|maximum|minimum|scan(l|r)?1?|replicate|slice|apply|
-      				split(At|-at)?|take(While|-while)?|drop(While|-while)?|span|first|
+      				and(List|-list)|or(List|-list)|any|all|unique(By|-by)?|sum|product|mean|compact|
+      				concat(Map|-map)?|maximum(By|-by)?|minimum(By|-by)?|scan(l|r)?1?|replicate|slice|apply|
+      				split(At|-at)?|count(By|-by)|take(While|-while)?|drop(While|-while)?|span|first|
       				break(It|-it)|list(ToObj|-to-obj)|obj(ToFunc|-to-func)|
       				pairs(ToObj|-to-obj)|obj(ToPairs|-to-pairs|ToLists|-to-lists)|
       				zip(All|-all)?(With|-with)?|compose|curry|partial|flip|fix|
@@ -456,6 +456,7 @@ patterns: [
       				lines|unlines|words|unwords|max|min|negate|abs|signum|quot|rem|div|mod|
       				recip|pi|tau|exp|sqrt|ln|pow|sin|cos|tan|asin|acos|atan|atan2|truncate|
       				round|ceiling|floor|is(It|-it)NaN|even|odd|gcd|lcm|disabled__id
+              |at|(elem|find)(Index|-index|Indices|-indices)
       			)\\b(?![.-])
     '''
     name: "support.function.prelude.livescript"

@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "1.0.0",
   "name": "language-livescript-edge",
   "description": "Up to date LiveScript language support in Atom",
   "license": "MIT",

@@ -1,18 +1,18 @@
 {
   "version": "0.0.0",
-  "name": "language-LiveScript-edge",
+  "name": "language-livescript-edge",
   "description": "Up to date LiveScript language support in Atom",
   "license": "MIT",
   "engines": {
     "atom": "*",
     "node": "*"
   },
-  "homepage": "http://github.com/blvz/language-LiveScript",
+  "homepage": "http://github.com/blvz/language-livescript-edge",
   "repository": {
     "type": "git",
-    "url": "https://github.com/blvz/language-LiveScript.git"
+    "url": "https://github.com/blvz/language-livescript-edge.git"
   },
   "bugs": {
-    "url": "https://github.com/blvz/language-LiveScript/issues"
+    "url": "https://github.com/blvz/language-livescript-edge/issues"
   }
 }

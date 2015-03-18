@@ -425,7 +425,7 @@ patterns: [
   {
     match: '''
       (?x)\\b(
-      				decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|require
+      				decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|-float|Int|-int)|require
       			)\\b
     '''
     name: "support.function.livescript"
@@ -481,7 +481,7 @@ patterns: [
   {
     match: '''
       (?x)((?<=Array\\.)(
-      				isArray
+      				is(Array|-array)
       			))\\b
     '''
     name: "support.function.static.array.livescript"

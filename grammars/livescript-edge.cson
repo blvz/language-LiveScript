@@ -525,7 +525,7 @@ repository:
   backslash_string:
     patterns: [
       {
-        begin: "\\\\([\\\\)\\s,\\};\\]])?"
+        begin: "\\\\([\\\\)\\s,\\};\\]])?(?!$)"
         beginCaptures:
           "0":
             name: "string.quoted.single.livescript"

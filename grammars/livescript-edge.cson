@@ -520,22 +520,12 @@ patterns: [
     match: "[\\$\\w][\\w-]*"
     name: "variable.other.livescript"
   }
+  {
+    match: "\\\\[\\$\\.\\/\\%\\^\\&\\*\\!\\=\\+\\[\\]\\(\\)\\{\\}\\<\\>\\w-]*"
+    name: "string.quoted.single.livescript"
+  }
 ]
 repository:
-  backslash_string:
-    patterns: [
-      {
-        begin: "\\\\([\\\\)\\s,\\};\\]])?(?!$)"
-        beginCaptures:
-          "0":
-            name: "string.quoted.single.livescript"
-        end: "([^\\)\\s,\\};\\]])(?=[\\)\\s,\\};\\]])"
-        endCaptures:
-          "0":
-            name: "punctuation.definition.string.end.livescript"
-        contentName: "string.quoted.single.livescript"
-      }
-    ]
   double_quoted_string:
     patterns: [
       {

@@ -521,7 +521,7 @@ patterns: [
     name: "variable.other.livescript"
   }
   {
-    match: "\\\\[\\$\\.\\/\\%\\^\\&\\*\\!\\=\\+\\[\\]\\(\\)\\{\\}\\<\\>\\w-]*"
+    match: "\\\\[\\$\\.\\/\\%\\^\\#\\&\\*\\'\\\"\\!\\=\\+\\[\\]\\(\\{\\}\\<\\>\\w-]*"
     name: "string.quoted.single.livescript"
   }
 ]
